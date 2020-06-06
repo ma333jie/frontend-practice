@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AJAX 101</title>
+</head>
+
+<h1>Hello Ajax </h1>
+
+
+<script type="text/javascript">
+	// how to create a ajax object
+	// XMLHttpRequest 
+
+	var xhr = new XMLHttpRequest();
+
+	// setting asynchronous 
+	xhr.open('GET', './person.json',true)
+
+	// send 
+	xhr.send();
+
+	//listen xhr status 
+	xhr.onreadstatechange = function(){
+		//req status 
+		console.log(xhr.readyState);
+		if(xhr.readState == 4 &&xhr.status == 200){
+			console.log(xhr.respnseText);
+		}
+	}
+	// listen method 2 
+	xhr.onload = function(){
+		console.log(xhr.readSate);
+		if(xhr.status == 200){
+			console.log(xhr.responseText);
+		}
+	}
+
+	function ajax(method, url, data, sucCallback, errCallback){
+		var xhr = new XMLHttpRequest();
+		xhr.open(method, url, true);
+		if(data == null){
+			xhr.send();
+		}else{
+			xhr.setRequestHeader("Content-Type", "application/json;charset=utf-8");
+			xhr.send(data);
+		}
+
+		xhr.onload = function(){
+			if(xhr.status == 200){
+				sucCallback(xhr.respnseText);
+			}else{
+				errCallback();
+			}
+		}
+
+		xhr.onerror = function(){
+			errCallback();
+		}
+	}
+
+	ajax('GET','.person.json',null, function(sol){
+		console.log(JSON.parse(sol))
+	},function(){
+		console.log("error")
+	})
+
+
+</script>
+
+<!-- <script type="text/javascript">
+	// call back funciton
+	fucntion fn(a, cb){
+		a++;
+		cb(a);
+	}
+
+	fn(1,function(data)){
+		console.log(data);
+	}
+</script> -->
+<body>
+
+</body>
+</html>

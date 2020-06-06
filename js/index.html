@@ -1,0 +1,58 @@
+<script>
+
+console.log(a1);
+console.log(a1);
+console.log(f1);
+
+var a1 = 1;
+var a2 = 2; 
+var a3 = 'hello';
+var a4 = {name: 'Jesses Sun'};
+
+var res = f1(a1, a2);
+console.log(res);
+
+function f1(x,y){
+	 var b1 = 30; 
+	 var b2 = 40; 
+
+	 console.log(x);
+	 console.log(y);
+
+
+
+	 function f2(){
+	 	console.log(b1+b2);
+	 	console.log('this is f2');
+	 }
+	 f2();
+	 f2();
+	 return x+y;
+}
+
+
+/// second part 
+
+function test(){
+	console.log('hi');
+}
+console.log(test.name);
+console.dir(test);
+
+
+///third part
+var a = 9; 
+console.log(window.a);
+function f1(){
+	var t2 = 20; 
+	console.log(a);
+	function f2(){
+		var t3 = 30;
+		console.log('t2 --', t2);
+		console.log('t3 --', t3);
+	}
+	f2();
+}
+f1();
+
+</script>
