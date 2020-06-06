@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+	<meta charset="utf-8">
+	<title>DOM Practice</title>
+</head>
+<body>
+<!-- 
+	<p id = "demo">line 1</p>
+	<p>line 2</p>
+	<div>line 3 </div>
+
+	<h2 class = "box"> line 4</h2>
+	<div id  = "container" class = "box box1">123</div>
+	<div class = "box">234</div>
+ --><script>
+		// get element by id; id is unique
+		var oP1 = document.getElementById('demo');
+		// get element by tag name 
+		var oP = document.getElementsByTagName("p");
+
+		var oDiv = document.getElementsByTagName('div')[0];
+
+		// get element by class name 
+		var oH = document.getElementsByClassName('box');
+
+		// query selector
+		var ele = document.querySelector('.box');
+	
+
+		var ele1 = document.querySelectorAll('.box')
+		// not update all the time 
+// web page can be removed but the oDivs sice are still the same. 
+		var oDivs = document.querySelectorAll('div');
+		console.log(oDivs);
+		oDivs[0].remove();
+		console.log(oDivs);
+//////------ append child------///
+		var oDiv = document.createElement('div');
+		oDiv.inenerHTML = '123';
+		document.body.appendChild(oDiv);
+
+		//step 1: get current node
+		var oParenent = document.getElementsByTagName('div')[0];
+		oParenent.appendChild(oDiv);
+
+	// ----- other types of insert rather than appendChild --
+	var oDiv = document.getElementsByTagName('div')[0];
+	// oDiv.after(oLi); 
+	// oDiv.after(oLi, oP);
+
+	</script>
+</body>
+</html>

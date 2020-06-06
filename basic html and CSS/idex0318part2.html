@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<div class = "box"> large box 
+		<p>box 1</p>
+		<p>box 2</p>
+		<p data-name = 'jenny' data-age = '10'>Data box for jenny </p> 
+	</div>
+	<script >
+		// what we have done? 
+		var oDiv = document.getElementsByTagName("div")[0];
+		var attr = oDiv.getAttribute('class');
+
+		oDiv.setAttribute('id', 'wrapper');
+	// set properties for element, beside id and class properties 
+	// private properties has to define as data - xxx
+		var oP = document.getElementsByTagName('p')[2];
+		var data = oP.dataset;
+
+	</script>
+</body>
+</html>

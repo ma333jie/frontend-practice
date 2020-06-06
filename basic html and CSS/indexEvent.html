@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>event demo</title>
+	<style type="text/css">
+		div{
+			width: 200px;
+			height:200px;
+			background-color: blue; 
+		}
+	</style>
+
+</head>
+	<div></div>
+	<p onclick = "console.log(123)">type 123</p>
+
+<script type="text/javascript">
+	
+	var oDiv = document.getElementsByTagName('div')[0];
+
+	// method 1: element.onclick = function(){}
+		// can not repeat, only read the last steps 
+	oDiv.onclick = function(){
+		console.log('clicked 1');
+		oDiv.style.backgroundColor = 'peachpuff';
+	}
+
+	// method 2; ele.adEventLister, can repeat 
+	// oDiv.addEeventListener('click', function(){
+	// 	console.log(1);
+	// },false)
+</script>
+<body>
+
+</body>
+</html>

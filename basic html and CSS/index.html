@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Teach</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/16.13.1/umd/react.development.js" integrity="sha256-4gJGEx/zXAxofkLPGXiU2IJHqSOmYV33Ru0zw0TeJ30=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/16.13.1/umd/react-dom.development.js" integrity="sha256-/z9BuuCDG5rQaHQBQWtzk3dBOTjTAOrn+SUSRGDjR40=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js" integrity="sha256-L/S5mZS8SPJVWoKym3Zwgf2f3/s3X3MaZ7QBA9HdnN8=" crossorigin="anonymous"></script>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="root"></div>
+<script type="text/babel">
+
+    class Animal {
+        constructor(name) {
+            this.name = name;
+        }
+
+        speak() {
+            console.log(this.name + ' makes a noise.');
+        }
+
+        static walk() {
+            console.log('walk');
+        }
+    }
+
+    class Dog extends Animal {
+        constructor(name, age) {
+            super(name);
+            this.age = age;
+        }
+
+        speak() {
+            console.log(this.name + ' barks at age ' + this.age);
+        }
+    }
+
+    const d = new Dog('Mitzie', 10);
+    d.speak(); // Mitzie barks.
+    Dog.walk(); // walk
+    Animal.walk(); // walk
+    d.walk(); // d.walk is not a function
+</script>
+</body>
+</html>
